@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TodoList.Interfaces;
-using TodoList.Domain;
+using TodoList.DTOs;
 
 namespace TodoList.Controllers
 {
     [ApiController]
     [Route("todos")]
-    public class TodoController(ITodoService service)
+    public class TodoController(ITodoService service) : Controller
     {
         private readonly ITodoService _service = service;
 

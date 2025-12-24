@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TodoList.Domain;
 using TodoList.Interfaces;
+using TodoList.Domain;
 
 namespace TodoList.Data.Repositories
 {
     public class TodoRepository(Database database) : ITodoRepository
     {
         private readonly Database _database = database;
-        public async Task Add(TodoDTO todo)
+        public async Task Add(Todo todo)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace TodoList.Data.Repositories
             }
         }
 
-        public async Task<List<TodoDTO>> FindAll()
+        public async Task<List<Todo>> FindAll()
         {
             try
             {

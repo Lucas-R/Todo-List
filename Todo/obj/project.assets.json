@@ -3665,32 +3665,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lucas.bezerra\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/rodrigueslcs/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Todo\\Todo\\TodoList.csproj",
+      "projectUniqueName": "/home/rodrigueslcs/Documentos/projects/Todo-List/Todo/TodoList.csproj",
       "projectName": "TodoList",
-      "projectPath": "C:\\Projects\\Todo\\Todo\\TodoList.csproj",
-      "packagesPath": "C:\\Users\\lucas.bezerra\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Todo\\Todo\\obj\\",
+      "projectPath": "/home/rodrigueslcs/Documentos/projects/Todo-List/Todo/TodoList.csproj",
+      "packagesPath": "/home/rodrigueslcs/.nuget/packages/",
+      "outputPath": "/home/rodrigueslcs/Documentos/projects/Todo-List/Todo/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\lucas.bezerra\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/rodrigueslcs/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3703,13 +3695,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -3749,7 +3735,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

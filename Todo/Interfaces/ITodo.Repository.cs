@@ -4,7 +4,7 @@ namespace TodoList.Interfaces
 {
     public interface ITodoRepository
     {
-        Task Add(TodoDTO todo);
-        Task<List<TodoDTO>> FindAll();
+        Task Add(Todo todo);
+        Task<List<Todo>> FindAll();
     }
 }
