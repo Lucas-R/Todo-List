@@ -22,5 +22,27 @@ namespace TodoList.Controllers
         {
             return Ok(await _service.FindAll());
         }
+
+        [HttpGet("{code}")]
+        public async Task<ActionResult<TodoDTO>>  FindOne(string code)
+        {
+            TodoDTO? todo = await _service.FindOne(code);
+
+            if(todo is null)
+                return NotFound(new { message = "Todo not found" });
+
+            return todo;
+        }
+
+        [HttpPut("{code}")]
+        public async Task<IActionResult> Update(string code, [FromBody] TodoUpdateDTO update)
+        {
+            TodoDTO? todo = await _service.Update(code, update);
+
+            if (todo is null)
+                return NotFound(new { message = "Todo not found" });
+
+            return Ok(todo);
+        }
     }
 }

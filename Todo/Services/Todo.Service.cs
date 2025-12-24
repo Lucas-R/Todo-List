@@ -35,5 +35,42 @@ namespace TodoList.Services
                 CreatedAt = todo.CreatedAt
             })];
         }
+
+        public async Task<TodoDTO?> FindOne(string code)
+        {
+            Todo? todo = await _repository.FindOne(code);
+
+            if(todo is null)
+                return null; 
+            
+            return new TodoDTO
+            {
+                Code = todo.Code,
+                Title = todo.Title,
+                Done = todo.Done,
+                CreatedAt = todo.CreatedAt
+            };
+        }
+
+        public async Task<TodoDTO?> Update(string code, TodoUpdateDTO update)
+        {
+            Todo? todo = await _repository.FindOne(code);
+
+            if (todo is null)
+                return null;
+
+            todo.Update(update.Title, update.Done);
+
+            await _repository.Update(todo);
+
+             return new TodoDTO
+            {
+                Code = todo.Code,
+                Title = todo.Title,
+                Done = todo.Done,
+                CreatedAt = todo.CreatedAt,
+                UpdatedAt = todo.UpdatedAt
+            };
+        }
     }
 }

@@ -6,5 +6,7 @@ namespace TodoList.Interfaces
     {
         Task Add(Todo todo);
         Task<List<Todo>> FindAll();
+        Task<Todo?> FindOne(string code);
+        Task Update(Todo update);
     }
 }

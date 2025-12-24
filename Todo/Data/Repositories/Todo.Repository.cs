@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TodoList.Interfaces;
 using TodoList.Domain;
+using TodoList.DTOs;
 
 namespace TodoList.Data.Repositories
 {
@@ -30,6 +31,17 @@ namespace TodoList.Data.Repositories
                 Console.WriteLine(ex.ToString());
                 return [];
             }
+        }
+
+        public async Task<Todo?> FindOne(string code)
+        {
+            return await _database.Todos.AsNoTracking().FirstOrDefaultAsync(todo => todo.Code == code);
+        }
+
+        public async Task Update(Todo todo)
+        {
+            _database.Todos.Update(todo);
+            await _database.SaveChangesAsync();
         }
     }
 }
