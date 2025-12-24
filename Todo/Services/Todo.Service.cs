@@ -72,5 +72,16 @@ namespace TodoList.Services
                 UpdatedAt = todo.UpdatedAt
             };
         }
+
+        public async Task<bool> Delete(string code)
+        {
+            Todo? todo = await _repository.FindOne(code);
+
+            if (todo is null)
+                return false;
+
+            await _repository.Delete(todo);
+            return true;
+        }
     }
 }

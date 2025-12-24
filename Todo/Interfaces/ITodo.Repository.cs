@@ -8,5 +8,6 @@ namespace TodoList.Interfaces
         Task<List<Todo>> FindAll();
         Task<Todo?> FindOne(string code);
         Task Update(Todo update);
+        Task<bool> Delete(Todo code);
     }
 }

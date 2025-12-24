@@ -43,5 +43,20 @@ namespace TodoList.Data.Repositories
             _database.Todos.Update(todo);
             await _database.SaveChangesAsync();
         }
+
+        public async Task<bool> Delete (Todo todo)
+        {
+                try
+                {
+                    _database.Todos.Remove(todo);
+                    await _database.SaveChangesAsync();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return false;
+                }
+        }
     }
 }

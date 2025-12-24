@@ -44,5 +44,16 @@ namespace TodoList.Controllers
 
             return Ok(todo);
         }
+
+        [HttpDelete("{code}")]
+        public async Task<IActionResult> Delete(string code)
+        {
+            bool deleted = await _service.Delete(code);
+
+            if(!deleted)
+                return NotFound(new { message = "Todo not found" });
+            
+            return NoContent();
+        }
     }
 }
